@@ -18,7 +18,8 @@
 	<h5>Latitude <input type="number" id="lat" value="12.989341" title="CDAC coordinates"> </h5>
 	<h5>Zoom * <input type="number" id="zoom" max=22 required title="16 or above for Street view"> </h5>
 	<input type="submit" onClick="fn()">
-<form class="form-inline">
+    <div id="map" class="map"></div>
+    <form class="form-inline">
       <label>Geometry type &nbsp;</label>
       <select id="type">
         <option value="Point">Point</option>
@@ -27,10 +28,10 @@
         <option value="Circle">Circle</option>
       </select>
     </form>
-<input type="button" id="export-png" value ="Download Map">
-    <div id="map" class="map"></div>
-    <script >
-function fn(){
+    <input type="button" id="export-png" value ="Download Map">
+
+<script>
+	function fn(){
  	var t=	document.getElementById("zoom");
 	var raster = new ol.layer.Tile({
         source: new ol.source.OSM()
